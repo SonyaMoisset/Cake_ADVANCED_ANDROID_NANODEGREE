@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="ingredient"
+            type="com.sonyamoisset.android.cake.db.entity.Ingredient"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/detail_activity_ingredient_list_item_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:paddingBottom="@dimen/padding_2dp"
+            android:text="@{String.valueOf(ingredient.getQuantity())}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/detail_activity_ingredient_list_item_measure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4dp"
+            android:paddingBottom="@dimen/padding_2dp"
+            android:text="@{ingredient.getMeasure()}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/detail_activity_ingredient_list_item_ingredient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4dp"
+            android:paddingBottom="@dimen/padding_2dp"
+            android:text="@{ingredient.getIngredient()}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorPrimary"/>
+
+    </LinearLayout>
+</layout>

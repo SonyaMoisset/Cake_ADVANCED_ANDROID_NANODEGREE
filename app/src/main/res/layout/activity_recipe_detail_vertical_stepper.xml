@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="watchStepHandler"
+            type="com.sonyamoisset.android.cake.ui.detail.RecipeDetailActivity"/>
+
+        <variable
+            name="nextStepHandler"
+            type="com.sonyamoisset.android.cake.ui.detail.fragment.RecipeDetailFragment"/>
+
+        <variable
+            name="step"
+            type="com.sonyamoisset.android.cake.db.entity.Step"/>
+
+        <variable
+            name="stepSize"
+            type="Integer"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/activity_recipe_detail_vertical_stepper_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:text="@{step.getDescription()}"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_size_24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button
+            android:id="@+id/activity_recipe_detail_vertical_stepper_button_watch_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:background="@color/colorPrimary"
+            android:onClick="@{() -> watchStepHandler.onClickStepVideo()}"
+            android:paddingLeft="@dimen/margin_16dp"
+            android:paddingRight="@dimen/margin_16dp"
+            android:text="@string/activity_recipe_detail_button_watch_step"
+            android:textColor="@color/colorSecondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_recipe_detail_vertical_stepper_description"/>
+
+        <Button
+            android:id="@+id/activity_recipe_detail_vertical_stepper_button_watch_next_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:background="@color/colorPrimary"
+            android:onClick="@{() -> nextStepHandler.onClickNextStep()}"
+            android:paddingLeft="@dimen/margin_16dp"
+            android:paddingRight="@dimen/margin_16dp"
+            android:text="@string/activity_recipe_detail_button_watch_next_step"
+            android:textColor="@color/colorSecondary"
+            app:layout_constraintBaseline_toBaselineOf="@+id/activity_recipe_detail_vertical_stepper_button_watch_step"
+            app:layout_constraintStart_toEndOf="@+id/activity_recipe_detail_vertical_stepper_button_watch_step"
+            app:set_visibility="@{step.getId() + 1 != stepSize}"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

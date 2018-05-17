@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Cake</string>
+
+    <string name="activity_recipe_cake_placeholder_image">Cake Placeholder Image</string>
+    <string name="activity_recipe_servings">servings</string>
+    <string name="activity_recipe_steps">steps</string>
+    <string name="activity_recipe_no_internet_connection_toast_message">No internet connection</string>
+
+    <string name="activity_recipe_detail_button_watch_step">Watch step</string>
+    <string name="activity_recipe_detail_button_watch_next_step">Next step</string>
+
+    <string name="fragment_recipe_detail_ingredients_list_title">Ingredients</string>
+    <string name="fragment_recipe_detail_button_add_to_widget">Add this recipe to the widget</string>
+    <string name="fragment_recipe_detail_steps_list_title">Steps</string>
+
+    <string name="fragment_recipe_video_button_next_step_video">next</string>
+    <string name="fragment_recipe_video_button_previous_step_video">previous</string>
+
+    <string name="exoplayer_playback_control_view_previous_button">ExoPlayer Playback Control View Previous Button</string>
+    <string name="exoplayer_playback_control_view_play_button">ExoPlayer Playback Control View Play Button</string>
+    <string name="exoplayer_playback_control_view_pause_button">ExoPlayer Playback Control View Pause Button</string>
+
+    <string name="widget_text">Choose a recipe and click the add to the widget button to save it to the HomeScreen</string>
+
+    <string name="add_to_back_stack_key">recipe</string>
+
+    <string name="pref_widget_key">pref_widget_key</string>
+    <string name="pref_title_key">pref_title_key</string>
+</resources>

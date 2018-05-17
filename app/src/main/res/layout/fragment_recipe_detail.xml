@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.sonyamoisset.android.cake.ui.detail.fragment.RecipeDetailFragment"/>
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="@string/fragment_recipe_detail_ingredients_list_title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/fragment_recipe_ingredients_detail_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+
+            <Button
+                android:id="@+id/fragment_recipe_detail_button_add_to_widget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:background="@color/colorPrimary"
+                android:onClick="@{() -> handler.onClickAddWidgetToHomeScreen()}"
+                android:paddingLeft="@dimen/padding_32dp"
+                android:paddingRight="@dimen/padding_32dp"
+                android:text="@string/fragment_recipe_detail_button_add_to_widget"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/colorSecondary"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="@string/fragment_recipe_detail_steps_list_title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+            <moe.feng.common.stepperview.VerticalStepperView
+                android:id="@+id/fragment_recipe_detail_vertical_stepper_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:step_activated_color="@color/colorPrimary"
+                app:step_normal_color="@color/colorPrimaryLight"/>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="recipe"
+            type="com.sonyamoisset.android.cake.db.entity.Recipe"/>
+
+        <variable
+            name="handler"
+            type="com.sonyamoisset.android.cake.ui.common.ClickHandler"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_recipe_card_view_recipe_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_8dp"
+        android:layout_marginStart="@dimen/margin_8dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:onClick="@{() ->  handler.onClick(recipe)}"
+        app:cardBackgroundColor="@color/colorSecondary">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/activity_recipe_list_item_placeholder_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/activity_recipe_cake_placeholder_image"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/activity_recipe_list_item_name"
+                app:layout_constraintDimensionRatio="H,16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/activity_recipe_list_item_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="@{recipe.getName()}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toTopOf="@+id/activity_recipe_list_item_servings_count"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activity_recipe_list_item_placeholder_image"/>
+
+
+            <TextView
+                android:id="@+id/activity_recipe_list_item_servings_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/padding_4dp"
+                android:text="@{String.valueOf(recipe.getServings())}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activity_recipe_list_item_name"/>
+
+            <TextView
+                android:id="@+id/activity_recipe_list_item_servings_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:layout_marginStart="@dimen/margin_12dp"
+                android:layout_marginTop="@dimen/padding_4dp"
+                android:text="@string/activity_recipe_servings"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/activity_recipe_list_item_servings_count"
+                app:layout_constraintTop_toBottomOf="@+id/activity_recipe_list_item_name"/>
+
+
+            <TextView
+                android:id="@+id/activity_recipe_list_item_ingredients_steps_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/padding_4dp"
+                android:text="@{String.valueOf(recipe.getSteps().size())}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/activity_recipe_list_item_servings_text"
+                app:layout_constraintTop_toBottomOf="@+id/activity_recipe_list_item_name"/>
+
+            <TextView
+                android:id="@+id/activity_recipe_list_item_ingredients_steps_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:layout_marginStart="@dimen/margin_4dp"
+                android:layout_marginTop="@dimen/padding_4dp"
+                android:text="@string/activity_recipe_steps"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/activity_recipe_list_item_ingredients_steps_count"
+                app:layout_constraintTop_toBottomOf="@+id/activity_recipe_list_item_name"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</layout>

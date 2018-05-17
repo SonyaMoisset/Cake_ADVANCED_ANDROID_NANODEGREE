@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stepSize"
+            type="Integer"/>
+
+        <variable
+            name="step"
+            type="com.sonyamoisset.android.cake.db.entity.Step"/>
+
+        <variable
+            name="handler"
+            type="com.sonyamoisset.android.cake.ui.detail.fragment.RecipeVideoFragment"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/fragment_recipe_video_exoplayer_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/fragment_recipe_video_exoplayer_placeholder_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:contentDescription="@string/activity_recipe_cake_placeholder_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="H,16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <android.support.constraint.Barrier
+            android:id="@+id/fragment_recipe_video_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="fragment_recipe_video_exoplayer_placeholder_image,fragment_recipe_video_exoplayer_view"/>
+
+        <TextView
+            android:id="@+id/fragment_recipe_video_short_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:text="@{step.getShortDescription()}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_recipe_video_barrier"/>
+
+        <TextView
+            android:id="@+id/fragment_recipe_video_description"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/margin_16dp"
+            android:text="@{step.getDescription()}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_recipe_video_button_view_previous_step"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_recipe_video_short_description"/>
+
+        <Button
+            android:id="@+id/fragment_recipe_video_button_view_next_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_16dp"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:background="@color/colorPrimary"
+            android:onClick="@{() -> handler.onClickNext()}"
+            android:paddingLeft="@dimen/padding_32dp"
+            android:paddingRight="@dimen/padding_32dp"
+            android:text="@string/fragment_recipe_video_button_next_step_video"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="@color/colorSecondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fragment_recipe_video_button_view_previous_step"
+            app:set_visibility="@{step.getId() + 1 != stepSize}"/>
+
+        <Button
+            android:id="@+id/fragment_recipe_video_button_view_previous_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_16dp"
+            android:layout_marginEnd="@dimen/margin_8dp"
+            android:background="@color/colorPrimary"
+            android:onClick="@{() -> handler.onClickPrevious()}"
+            android:paddingLeft="@dimen/padding_32dp"
+            android:paddingRight="@dimen/padding_32dp"
+            android:text="@string/fragment_recipe_video_button_previous_step_video"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="@color/colorSecondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/fragment_recipe_video_button_view_next_step"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:set_visibility="@{step.getId() != 0}"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

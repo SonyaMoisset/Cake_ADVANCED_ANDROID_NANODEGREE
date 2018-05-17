@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="stepSize"
+            type="Integer"/>
+
+        <variable
+            name="step"
+            type="com.sonyamoisset.android.cake.db.entity.Step"/>
+
+        <variable
+            name="handler"
+            type="com.sonyamoisset.android.cake.ui.detail.fragment.RecipeVideoFragment"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/fragment_recipe_video_exoplayer_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/fragment_recipe_video_exoplayer_placeholder_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/activity_recipe_cake_placeholder_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="H,16:9"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
