@@ -6,18 +6,17 @@ An app that allows users to follow recipes to make cakes.
 
 ## Features
 - On MainActivity, recipes are displayed in a linear or grid layout depending on devices
-- On MainActivity, the user can click on a recipe to know more about it
+- On MainActivity, the user can click on a recipe to know more about it   
 
-![Homepage](https://github.com/SonyaMoisset/Cake_BakingApp_ADVANCED_ANDROID_NANODEGREE/blob/master/main_activity_mobile.png) 
-![Homepage](https://github.com/SonyaMoisset/Cake_BakingApp_ADVANCED_ANDROID_NANODEGREE/blob/master/main_activity_tablet.png)
+<img width="350" src="https://github.com/SonyaMoisset/Cake_BakingApp_ADVANCED_ANDROID_NANODEGREE/blob/master/main_activity_mobile.png">   <img width="435" src="https://github.com/SonyaMoisset/Cake_BakingApp_ADVANCED_ANDROID_NANODEGREE/blob/master/main_activity_tablet.png">
 
-- On DetailActivity, the ingredients and steps are visibile for each recipe
-![Homepage](https://github.com/SonyaMoisset/Cake_BakingApp_ADVANCED_ANDROID_NANODEGREE/blob/master/detail_activity_ingredients_steps.png)
-![Homepage](https://github.com/SonyaMoisset/Cake_BakingApp_ADVANCED_ANDROID_NANODEGREE/blob/master/detail_activity_tablet_landscape.png)
+- On DetailActivity, the ingredients and steps are visibile for each recipe    
 
-- On DetailActivity, the user can follow a recipe through videos
-![Homepage](https://github.com/SonyaMoisset/Cake_BakingApp_ADVANCED_ANDROID_NANODEGREE/blob/master/detail_activity_video_step.png)
-![Homepage](https://github.com/SonyaMoisset/Cake_BakingApp_ADVANCED_ANDROID_NANODEGREE/blob/master/detail_activity_tablet_portrait.png)
+<img width="350" src="https://github.com/SonyaMoisset/Cake_BakingApp_ADVANCED_ANDROID_NANODEGREE/blob/master/detail_activity_ingredients_steps.png">   <img width="420" src="https://github.com/SonyaMoisset/Cake_BakingApp_ADVANCED_ANDROID_NANODEGREE/blob/master/detail_activity_tablet_landscape.png">
+
+- On DetailActivity, the user can follow a recipe through videos    
+
+<img width="350" src="https://github.com/SonyaMoisset/Cake_BakingApp_ADVANCED_ANDROID_NANODEGREE/blob/master/detail_activity_video_step.png">   <img width="435" src="https://github.com/SonyaMoisset/Cake_BakingApp_ADVANCED_ANDROID_NANODEGREE/blob/master/detail_activity_tablet_portrait.png">
 
 - On DetailActivity, a user can add their favotire recipe to a homescreen widget
 
